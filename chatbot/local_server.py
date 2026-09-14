@@ -47,8 +47,8 @@ if os.path.exists(env_path):
                 k, v = line.split("=", 1)
                 os.environ.setdefault(k.strip(), v.strip())
 
-OPENROUTER_KEY = os.environ.get("OPENROUTER_API_KEY", "")
-GROQ_KEY = os.environ.get("GROQ_API_KEY", "")
+OPENROUTER_KEY = os.environ.get("OPENROUTER_API_KEY", "").strip().replace("\n", "").replace("\r", "").replace(" ", "")
+GROQ_KEY = os.environ.get("GROQ_API_KEY", "").strip().replace("\n", "").replace("\r", "").replace(" ", "")
 
 SYSTEM_PROMPT = f"""You are the Music Streaming Data Explorer — an expert Senior Data Analyst assistant with direct access to a Python Pandas execution environment running on the assessment dataset.
 
