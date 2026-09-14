@@ -35,6 +35,8 @@ prs.slide_height = Inches(7.5)
 SLIDE_W = prs.slide_width
 SLIDE_H = prs.slide_height
 
+LIVE_URL = "https://music-streaming-explorer.onrender.com"
+
 # ── Helper functions ────────────────────────────────────────────
 def set_bg(slide, color):
     bg = slide.background
@@ -61,22 +63,70 @@ def thin_line(slide, left, top, width, color, height=Pt(2)):
     shape.line.fill.background()
     return shape
 
-def add_link_button(slide, left, top, w, h, text, url, bg_color=SOFT_BLUE, border_color=PRIMARY_BLUE, text_color=PRIMARY_BLUE):
-    rect = add_rect(slide, left, top, w, h, bg_color, border_color, Pt(1))
+def add_link_button(slide, left, top, w, h, text, url, bg_color=PRIMARY_BLUE, border_color=None, text_color=WHITE, font_size=Pt(11)):
+    """Modern rounded CTA button with direct shape click action (clean, no text underline)."""
+    rect = slide.shapes.add_shape(MSO_SHAPE.ROUNDED_RECTANGLE, left, top, w, h)
+    rect.fill.solid()
+    rect.fill.fore_color.rgb = bg_color
+    if border_color:
+        rect.line.color.rgb = border_color
+        rect.line.width = Pt(1)
+    else:
+        rect.line.fill.background()
+    rect.shadow.inherit = False
     rect.click_action.hyperlink.address = url
-    txBox = slide.shapes.add_textbox(left, top + Pt(2), w, h)
-    tf = txBox.text_frame
-    tf.word_wrap = True
+    
+    tf = rect.text_frame
+    tf.word_wrap = False
+    tf.vertical_anchor = MSO_ANCHOR.MIDDLE
     p = tf.paragraphs[0]
     p.alignment = PP_ALIGN.CENTER
     run = p.add_run()
     run.text = text
-    run.font.size = Pt(10.5)
+    run.font.size = font_size
     run.font.bold = True
     run.font.color.rgb = text_color
     run.font.name = "Segoe UI"
-    run.hyperlink.address = url
     return rect
+
+def add_ask_ai_badge(slide, url=LIVE_URL):
+    """Sleek modern '✦ Ask AI Explorer ↗' button in top-right header, like a SaaS dashboard."""
+    left = Inches(10.5)
+    top = Inches(0.44)
+    w = Inches(2.2)
+    h = Inches(0.42)
+    rect = slide.shapes.add_shape(MSO_SHAPE.ROUNDED_RECTANGLE, left, top, w, h)
+    rect.fill.solid()
+    rect.fill.fore_color.rgb = PRIMARY_BLUE
+    rect.line.fill.background()
+    rect.shadow.inherit = False
+    rect.click_action.hyperlink.address = url
+    
+    tf = rect.text_frame
+    tf.word_wrap = False
+    tf.vertical_anchor = MSO_ANCHOR.MIDDLE
+    p = tf.paragraphs[0]
+    p.alignment = PP_ALIGN.CENTER
+    run = p.add_run()
+    run.text = "✦ Ask AI Explorer ↗"
+    run.font.size = Pt(10)
+    run.font.bold = True
+    run.font.color.rgb = WHITE
+    run.font.name = "Segoe UI"
+    return rect
+
+def add_footer_branding(slide, text="Kuwar Abhinav Aman  |  Data Analyst Assessment"):
+    """Subtle bottom-right branding in small, professional font."""
+    txBox = slide.shapes.add_textbox(Inches(8.2), Inches(7.18), Inches(4.6), Inches(0.24))
+    tf = txBox.text_frame
+    tf.word_wrap = False
+    p = tf.paragraphs[0]
+    p.alignment = PP_ALIGN.RIGHT
+    p.text = text
+    p.font.size = Pt(8.5)
+    p.font.color.rgb = MUTED_GREY
+    p.font.name = "Segoe UI"
+    return txBox
 
 def tb(slide, left, top, w, h, text, size=12, bold=False, color=CHARCOAL,
        align=PP_ALIGN.LEFT, font="Segoe UI", italic=False, spacing_after=Pt(2)):
@@ -125,6 +175,7 @@ set_bg(slide, WHITE)
 
 # Subtle accent line at top
 thin_line(slide, Inches(0), Inches(0), SLIDE_W, PRIMARY_BLUE, Pt(4))
+add_ask_ai_badge(slide)
 
 # Title
 tb(slide, Inches(2), Inches(2.2), Inches(9.3), Inches(1.0),
@@ -138,12 +189,19 @@ tb(slide, Inches(2), Inches(3.7), Inches(9.3), Inches(0.6),
    "Understanding the Drivers of Track Popularity", 18, False, MUTED_GREY, PP_ALIGN.CENTER)
 
 # Metadata
-tb(slide, Inches(2), Inches(5.1), Inches(9.3), Inches(0.35),
-   "Data Analyst Assessment  |  Tech Round 2", 12, False, MUTED_GREY, PP_ALIGN.CENTER)
+tb(slide, Inches(2), Inches(4.85), Inches(9.3), Inches(0.35),
+   "Candidate: Kuwar Abhinav Aman  |  Data Analyst Technical Assessment", 13, True, PRIMARY_BLUE, PP_ALIGN.CENTER)
 
-# Interactive Chatbot Launch Button
-add_link_button(slide, Inches(4.3), Inches(5.65), Inches(4.7), Inches(0.55),
-                "💬 Launch Interactive Data Explorer Chatbot", "http://localhost:5050")
+# Interactive Chatbot Launch Button (Hero CTA)
+add_link_button(slide, Inches(3.4), Inches(5.42), Inches(6.5), Inches(0.58),
+                "✦ Launch Interactive AI Data Explorer (10,058 Tracks) ↗", LIVE_URL,
+                bg_color=PRIMARY_BLUE, text_color=WHITE, font_size=Pt(12))
+
+tb(slide, Inches(2), Inches(6.12), Inches(9.3), Inches(0.3),
+   "Click to query the complete dataset in real-time with zero-hallucination Pandas execution",
+   10, False, MUTED_GREY, PP_ALIGN.CENTER, italic=True)
+
+add_footer_branding(slide)
 
 
 # ================================================================
@@ -155,6 +213,8 @@ set_bg(slide, WHITE)
 tb(slide, Inches(0.8), Inches(0.5), Inches(8), Inches(0.5),
    "Executive Summary", 22, True, DEEP_BLUE)
 thin_line(slide, Inches(0.8), Inches(1.05), Inches(1.8), PRIMARY_BLUE, Pt(2))
+add_ask_ai_badge(slide)
+add_footer_branding(slide)
 
 # Main headline
 tb(slide, Inches(0.8), Inches(1.5), Inches(11), Inches(0.5),
@@ -203,6 +263,8 @@ set_bg(slide, WHITE)
 tb(slide, Inches(0.8), Inches(0.5), Inches(8), Inches(0.5),
    "Data Quality & Cleaning", 22, True, DEEP_BLUE)
 thin_line(slide, Inches(0.8), Inches(1.05), Inches(1.8), PRIMARY_BLUE, Pt(2))
+add_ask_ai_badge(slide)
+add_footer_branding(slide)
 
 # Table header
 header_y = Inches(1.5)
@@ -260,9 +322,9 @@ for i, (issue, action, reason) in enumerate(rows):
        reason, 9.5, False, MUTED_GREY)
 
 # Summary line
-tb(slide, Inches(0.8), Inches(6.8), Inches(12), Inches(0.3),
+tb(slide, Inches(0.8), Inches(6.85), Inches(7.5), Inches(0.3),
    f"Cleaned dataset: 10,058 rows  |  9,637 with valid popularity scores  |  Every exclusion has a documented rationale",
-   10, False, MUTED_GREY, italic=True)
+   9.5, False, MUTED_GREY, italic=True)
 
 
 # ================================================================
@@ -274,6 +336,8 @@ set_bg(slide, WHITE)
 tb(slide, Inches(0.8), Inches(0.5), Inches(8), Inches(0.5),
    "How the Analysis Worked", 22, True, DEEP_BLUE)
 thin_line(slide, Inches(0.8), Inches(1.05), Inches(1.8), PRIMARY_BLUE, Pt(2))
+add_ask_ai_badge(slide)
+add_footer_branding(slide)
 
 # Process flow — 5 steps
 steps = [
@@ -336,9 +400,11 @@ multi(slide, Inches(0.8), Inches(5.5), Inches(11.5), Inches(1.5), [
 slide = prs.slides.add_slide(prs.slide_layouts[6])
 set_bg(slide, WHITE)
 
-tb(slide, Inches(0.8), Inches(0.5), Inches(11), Inches(0.5),
+tb(slide, Inches(0.8), Inches(0.5), Inches(9.2), Inches(0.5),
    "Energy has little to no overall association with popularity", 20, True, DEEP_BLUE)
 thin_line(slide, Inches(0.8), Inches(1.05), Inches(1.8), PRIMARY_BLUE, Pt(2))
+add_ask_ai_badge(slide)
+add_footer_branding(slide)
 
 # Chart
 chart_path = os.path.join(CHART_DIR, "h1_energy_popularity.png")
@@ -372,7 +438,7 @@ multi(slide, Inches(0.8), Inches(6.0), Inches(11.5), Inches(1.0), [
 ])
 
 # Footnote
-tb(slide, Inches(0.8), Inches(6.9), Inches(11), Inches(0.3),
+tb(slide, Inches(0.8), Inches(6.9), Inches(7.0), Inches(0.3),
    "Correlation measures the strength of association between two variables; it does not imply that one causes the other.",
    8.5, False, MUTED_GREY, italic=True)
 
@@ -383,9 +449,11 @@ tb(slide, Inches(0.8), Inches(6.9), Inches(11), Inches(0.3),
 slide = prs.slides.add_slide(prs.slide_layouts[6])
 set_bg(slide, WHITE)
 
-tb(slide, Inches(0.8), Inches(0.5), Inches(11), Inches(0.5),
+tb(slide, Inches(0.8), Inches(0.5), Inches(9.2), Inches(0.5),
    "The overall result changes when we look within genres", 20, True, DEEP_BLUE)
 thin_line(slide, Inches(0.8), Inches(1.05), Inches(1.8), PRIMARY_BLUE, Pt(2))
+add_ask_ai_badge(slide)
+add_footer_branding(slide)
 
 # Chart
 chart_path = os.path.join(CHART_DIR, "h1_genre_correlations.png")
@@ -424,7 +492,7 @@ multi(slide, Inches(0.8), Inches(5.9), Inches(11.5), Inches(0.8), [
 ])
 
 # Footnote
-tb(slide, Inches(0.8), Inches(6.9), Inches(11), Inches(0.3),
+tb(slide, Inches(0.8), Inches(6.9), Inches(7.0), Inches(0.3),
    "Exploratory analysis: testing 114 genres increases the chance of false positives. Individual genre results should be interpreted with caution.",
    8.5, False, MUTED_GREY, italic=True)
 
@@ -435,9 +503,11 @@ tb(slide, Inches(0.8), Inches(6.9), Inches(11), Inches(0.3),
 slide = prs.slides.add_slide(prs.slide_layouts[6])
 set_bg(slide, WHITE)
 
-tb(slide, Inches(0.8), Inches(0.5), Inches(11), Inches(0.5),
+tb(slide, Inches(0.8), Inches(0.5), Inches(9.2), Inches(0.5),
    "Superstar tracks are broadly proportional across regions", 20, True, DEEP_BLUE)
 thin_line(slide, Inches(0.8), Inches(1.05), Inches(1.8), PRIMARY_BLUE, Pt(2))
+add_ask_ai_badge(slide)
+add_footer_branding(slide)
 
 # Chart
 chart_path = os.path.join(CHART_DIR, "h2_superstar_regions.png")
@@ -470,7 +540,7 @@ multi(slide, Inches(0.8), Inches(5.2), Inches(11.5), Inches(1.0), [
 ])
 
 # Footnote
-tb(slide, Inches(0.8), Inches(6.9), Inches(11), Inches(0.3),
+tb(slide, Inches(0.8), Inches(6.9), Inches(7.0), Inches(0.3),
    "Sample: 9,436 tracks with complete popularity, market region, and artist tier data (622 tracks excluded due to missing values).",
    8.5, False, MUTED_GREY, italic=True)
 
@@ -484,6 +554,8 @@ set_bg(slide, WHITE)
 tb(slide, Inches(0.8), Inches(0.5), Inches(8), Inches(0.5),
    "Conclusions, Confidence & Limitations", 22, True, DEEP_BLUE)
 thin_line(slide, Inches(0.8), Inches(1.05), Inches(1.8), PRIMARY_BLUE, Pt(2))
+add_ask_ai_badge(slide)
+add_footer_branding(slide)
 
 # ── LEFT: What the data suggests ──
 add_rect(slide, Inches(0.8), Inches(1.4), Inches(5.5), Inches(2.7), VLIGHT_BLUE, LIGHT_BORDER, Pt(0.5))
@@ -516,8 +588,8 @@ chart_path = os.path.join(CHART_DIR, "popularity_by_tier.png")
 slide.shapes.add_picture(chart_path, Inches(0.5), Inches(4.4), Inches(5.5), Inches(2.8))
 
 # ── BOTTOM RIGHT: What we cannot claim + final message ──
-add_rect(slide, Inches(6.5), Inches(4.4), Inches(6.0), Inches(1.7), WHITE, LIGHT_BORDER, Pt(0.5))
-multi(slide, Inches(6.8), Inches(4.5), Inches(5.5), Inches(1.5), [
+add_rect(slide, Inches(6.5), Inches(4.35), Inches(6.0), Inches(1.55), WHITE, LIGHT_BORDER, Pt(0.5))
+multi(slide, Inches(6.8), Inches(4.45), Inches(5.5), Inches(1.4), [
     ("What We Cannot Claim", 12, True, MAGENTA, PP_ALIGN.LEFT),
     ("", 3, False, MUTED_GREY, PP_ALIGN.LEFT),
     ("\u2022  We cannot establish causation from this data.", 10, False, CHARCOAL, PP_ALIGN.LEFT),
@@ -527,29 +599,32 @@ multi(slide, Inches(6.8), Inches(4.5), Inches(5.5), Inches(1.5), [
 ])
 
 # Final analytical message
-add_rect(slide, Inches(6.5), Inches(6.2), Inches(6.0), Inches(0.55), SOFT_MAGENTA, LIGHT_BORDER, Pt(0.5))
-tb(slide, Inches(6.7), Inches(6.25), Inches(5.6), Inches(0.45),
+add_rect(slide, Inches(6.5), Inches(6.00), Inches(6.0), Inches(0.48), SOFT_MAGENTA, LIGHT_BORDER, Pt(0.5))
+tb(slide, Inches(6.7), Inches(6.05), Inches(5.6), Inches(0.38),
    "The dataset suggests that artist-level context is more strongly associated with popularity than energy alone.",
    9.5, False, CHARCOAL, italic=True)
 
 # Interactive Chatbot Companion Button
-add_link_button(slide, Inches(6.5), Inches(6.82), Inches(6.0), Inches(0.48),
-                "💬 Interactive Chatbot Companion — Query 10,058 Rows Live", "http://localhost:5050")
+add_link_button(slide, Inches(6.5), Inches(6.56), Inches(6.0), Inches(0.46),
+                "✦ Query 10,058 Rows Live on Web — Interactive AI Companion ↗", LIVE_URL,
+                bg_color=PRIMARY_BLUE, text_color=WHITE, font_size=Pt(10.5))
 
 
 
 # ================================================================
 # SAVE
 # ================================================================
-output_path = "Music_Streaming_Analysis.pptx"
+output_path = "Music_Streaming_Analysis_Live.pptx"
+prs.save(output_path)
+print(f"[DONE] Live Interactive PowerPoint saved to: {output_path}")
+
 try:
-    prs.save(output_path)
-    print(f"[DONE] Revised PowerPoint saved to: {output_path}")
+    prs.save("Music_Streaming_Analysis.pptx")
+    print("[DONE] Also updated primary: Music_Streaming_Analysis.pptx")
 except PermissionError:
-    output_path = "Music_Streaming_Analysis_Interactive.pptx"
-    prs.save(output_path)
-    print(f"[NOTE] Primary file locked by PowerPoint. Saved to: {output_path}")
+    print("[NOTE] Music_Streaming_Analysis.pptx is open in PowerPoint. Saved to Music_Streaming_Analysis_Live.pptx instead.")
 
 print(f"  Slides: {len(prs.slides)}")
 print(f"  File size: {os.path.getsize(output_path):,} bytes")
+
 
