@@ -1,0 +1,1562 @@
+{
+  "raw_shape": [
+    10132,
+    24
+  ],
+  "exact_duplicates_removed": 74,
+  "release_year_vague_values": 250,
+  "release_year_missing": 394,
+  "invalid_popularity_removed": 20,
+  "negative_durations_removed": 4,
+  "cleaned_shape": [
+    10058,
+    27
+  ],
+  "cleaning_summary": {
+    "exact_duplicates_removed": 74,
+    "casing_standardised": [
+      "market_region",
+      "artist_tier",
+      "streaming_platform",
+      "explicit"
+    ],
+    "invalid_popularity_set_nan": "20",
+    "negative_durations_set_nan": "4",
+    "vague_release_years_set_nan": 250,
+    "missing_release_years": 394
+  },
+  "h1_overall": {
+    "n": 9637,
+    "pearson_r": 0.0109,
+    "pearson_p": 0.285,
+    "spearman_r": -0.0128,
+    "spearman_p": 0.207,
+    "r_squared": 0.0001
+  },
+  "h1_energy_bins": [
+    {
+      "energy_bin": "0.0-0.1",
+      "mean_pop": 29.201342281879196,
+      "median_pop": 26.0,
+      "std_pop": 22.038069255465903,
+      "count": 298
+    },
+    {
+      "energy_bin": "0.1-0.2",
+      "mean_pop": 26.100775193798448,
+      "median_pop": 23.0,
+      "std_pop": 22.130153728809255,
+      "count": 387
+    },
+    {
+      "energy_bin": "0.2-0.3",
+      "mean_pop": 29.263157894736842,
+      "median_pop": 27.0,
+      "std_pop": 20.584707427604602,
+      "count": 475
+    },
+    {
+      "energy_bin": "0.3-0.4",
+      "mean_pop": 33.159375,
+      "median_pop": 34.0,
+      "std_pop": 21.93295174083342,
+      "count": 640
+    },
+    {
+      "energy_bin": "0.4-0.5",
+      "mean_pop": 34.970387243735765,
+      "median_pop": 38.0,
+      "std_pop": 21.78063197848879,
+      "count": 878
+    },
+    {
+      "energy_bin": "0.5-0.6",
+      "mean_pop": 34.0942507068803,
+      "median_pop": 37.0,
+      "std_pop": 23.124327117784308,
+      "count": 1061
+    },
+    {
+      "energy_bin": "0.6-0.7",
+      "mean_pop": 34.10134600158353,
+      "median_pop": 37.0,
+      "std_pop": 23.200992992571713,
+      "count": 1263
+    },
+    {
+      "energy_bin": "0.7-0.8",
+      "mean_pop": 33.327129563350034,
+      "median_pop": 36.0,
+      "std_pop": 24.372636933277004,
+      "count": 1397
+    },
+    {
+      "energy_bin": "0.8-0.9",
+      "mean_pop": 32.2453074433657,
+      "median_pop": 33.0,
+      "std_pop": 22.496258014668612,
+      "count": 1545
+    },
+    {
+      "energy_bin": "0.9-1.0",
+      "mean_pop": 30.48198464264619,
+      "median_pop": 27.0,
+      "std_pop": 19.64481747795283,
+      "count": 1693
+    }
+  ],
+  "h1_genre_corr_top5": [
+    {
+      "genre": "j-pop",
+      "n": 85,
+      "pearson_r": 0.392,
+      "pearson_p": 0.000207,
+      "spearman_r": 0.2903,
+      "spearman_p": 0.007047
+    },
+    {
+      "genre": "k-pop",
+      "n": 85,
+      "pearson_r": 0.3873,
+      "pearson_p": 0.00025,
+      "spearman_r": 0.5043,
+      "spearman_p": 1e-06
+    },
+    {
+      "genre": "swedish",
+      "n": 85,
+      "pearson_r": 0.3826,
+      "pearson_p": 0.000301,
+      "spearman_r": 0.323,
+      "spearman_p": 0.002567
+    },
+    {
+      "genre": "new-age",
+      "n": 83,
+      "pearson_r": 0.3471,
+      "pearson_p": 0.001305,
+      "spearman_r": 0.4008,
+      "spearman_p": 0.000174
+    },
+    {
+      "genre": "classical",
+      "n": 84,
+      "pearson_r": 0.2863,
+      "pearson_p": 0.008277,
+      "spearman_r": 0.2155,
+      "spearman_p": 0.048955
+    }
+  ],
+  "h1_genre_corr_bot5": [
+    {
+      "genre": "detroit-techno",
+      "n": 82,
+      "pearson_r": -0.2895,
+      "pearson_p": 0.00834,
+      "spearman_r": -0.2807,
+      "spearman_p": 0.010641
+    },
+    {
+      "genre": "study",
+      "n": 87,
+      "pearson_r": -0.2911,
+      "pearson_p": 0.006223,
+      "spearman_r": -0.3113,
+      "spearman_p": 0.003332
+    },
+    {
+      "genre": "garage",
+      "n": 87,
+      "pearson_r": -0.3021,
+      "pearson_p": 0.004453,
+      "spearman_r": -0.332,
+      "spearman_p": 0.001683
+    },
+    {
+      "genre": "iranian",
+      "n": 83,
+      "pearson_r": -0.304,
+      "pearson_p": 0.005211,
+      "spearman_r": -0.2452,
+      "spearman_p": 0.025486
+    },
+    {
+      "genre": "emo",
+      "n": 82,
+      "pearson_r": -0.4036,
+      "pearson_p": 0.00017,
+      "spearman_r": -0.4542,
+      "spearman_p": 1.8e-05
+    }
+  ],
+  "h1_genre_corr_all": [
+    {
+      "genre": "j-pop",
+      "n": 85,
+      "pearson_r": 0.392,
+      "pearson_p": 0.000207,
+      "spearman_r": 0.2903,
+      "spearman_p": 0.007047
+    },
+    {
+      "genre": "k-pop",
+      "n": 85,
+      "pearson_r": 0.3873,
+      "pearson_p": 0.00025,
+      "spearman_r": 0.5043,
+      "spearman_p": 1e-06
+    },
+    {
+      "genre": "swedish",
+      "n": 85,
+      "pearson_r": 0.3826,
+      "pearson_p": 0.000301,
+      "spearman_r": 0.323,
+      "spearman_p": 0.002567
+    },
+    {
+      "genre": "new-age",
+      "n": 83,
+      "pearson_r": 0.3471,
+      "pearson_p": 0.001305,
+      "spearman_r": 0.4008,
+      "spearman_p": 0.000174
+    },
+    {
+      "genre": "classical",
+      "n": 84,
+      "pearson_r": 0.2863,
+      "pearson_p": 0.008277,
+      "spearman_r": 0.2155,
+      "spearman_p": 0.048955
+    },
+    {
+      "genre": "j-rock",
+      "n": 88,
+      "pearson_r": 0.2765,
+      "pearson_p": 0.009118,
+      "spearman_r": 0.2212,
+      "spearman_p": 0.038317
+    },
+    {
+      "genre": "world-music",
+      "n": 86,
+      "pearson_r": 0.2451,
+      "pearson_p": 0.022925,
+      "spearman_r": 0.2199,
+      "spearman_p": 0.041869
+    },
+    {
+      "genre": "german",
+      "n": 85,
+      "pearson_r": 0.2413,
+      "pearson_p": 0.026074,
+      "spearman_r": 0.2369,
+      "spearman_p": 0.029008
+    },
+    {
+      "genre": "indian",
+      "n": 87,
+      "pearson_r": 0.2377,
+      "pearson_p": 0.026656,
+      "spearman_r": 0.2629,
+      "spearman_p": 0.013876
+    },
+    {
+      "genre": "trance",
+      "n": 82,
+      "pearson_r": 0.2154,
+      "pearson_p": 0.051936,
+      "spearman_r": 0.1951,
+      "spearman_p": 0.078977
+    },
+    {
+      "genre": "ska",
+      "n": 89,
+      "pearson_r": 0.2117,
+      "pearson_p": 0.046467,
+      "spearman_r": 0.0319,
+      "spearman_p": 0.766532
+    },
+    {
+      "genre": "mandopop",
+      "n": 79,
+      "pearson_r": 0.18,
+      "pearson_p": 0.112424,
+      "spearman_r": 0.238,
+      "spearman_p": 0.034656
+    },
+    {
+      "genre": "british",
+      "n": 87,
+      "pearson_r": 0.1598,
+      "pearson_p": 0.13925,
+      "spearman_r": 0.1837,
+      "spearman_p": 0.088594
+    },
+    {
+      "genre": "r-n-b",
+      "n": 86,
+      "pearson_r": 0.156,
+      "pearson_p": 0.151525,
+      "spearman_r": 0.1807,
+      "spearman_p": 0.096004
+    },
+    {
+      "genre": "idm",
+      "n": 83,
+      "pearson_r": 0.1538,
+      "pearson_p": 0.165001,
+      "spearman_r": 0.198,
+      "spearman_p": 0.072701
+    },
+    {
+      "genre": "pagode",
+      "n": 81,
+      "pearson_r": 0.1469,
+      "pearson_p": 0.190784,
+      "spearman_r": 0.0768,
+      "spearman_p": 0.495413
+    },
+    {
+      "genre": "tango",
+      "n": 89,
+      "pearson_r": 0.1459,
+      "pearson_p": 0.172484,
+      "spearman_r": 0.1168,
+      "spearman_p": 0.275648
+    },
+    {
+      "genre": "dub",
+      "n": 81,
+      "pearson_r": 0.1445,
+      "pearson_p": 0.198183,
+      "spearman_r": 0.2253,
+      "spearman_p": 0.043135
+    },
+    {
+      "genre": "mpb",
+      "n": 86,
+      "pearson_r": 0.1437,
+      "pearson_p": 0.186775,
+      "spearman_r": 0.1627,
+      "spearman_p": 0.134373
+    },
+    {
+      "genre": "punk",
+      "n": 82,
+      "pearson_r": 0.1409,
+      "pearson_p": 0.206704,
+      "spearman_r": -0.0504,
+      "spearman_p": 0.652712
+    },
+    {
+      "genre": "groove",
+      "n": 87,
+      "pearson_r": 0.1303,
+      "pearson_p": 0.229136,
+      "spearman_r": 0.205,
+      "spearman_p": 0.056865
+    },
+    {
+      "genre": "hip-hop",
+      "n": 86,
+      "pearson_r": 0.1242,
+      "pearson_p": 0.25438,
+      "spearman_r": 0.0867,
+      "spearman_p": 0.427142
+    },
+    {
+      "genre": "soul",
+      "n": 86,
+      "pearson_r": 0.119,
+      "pearson_p": 0.275154,
+      "spearman_r": 0.1635,
+      "spearman_p": 0.132603
+    },
+    {
+      "genre": "latin",
+      "n": 83,
+      "pearson_r": 0.1174,
+      "pearson_p": 0.290644,
+      "spearman_r": 0.0549,
+      "spearman_p": 0.621953
+    },
+    {
+      "genre": "happy",
+      "n": 82,
+      "pearson_r": 0.1161,
+      "pearson_p": 0.29881,
+      "spearman_r": 0.078,
+      "spearman_p": 0.485922
+    },
+    {
+      "genre": "samba",
+      "n": 86,
+      "pearson_r": 0.1139,
+      "pearson_p": 0.296334,
+      "spearman_r": -0.0999,
+      "spearman_p": 0.359887
+    },
+    {
+      "genre": "hardstyle",
+      "n": 83,
+      "pearson_r": 0.0965,
+      "pearson_p": 0.385656,
+      "spearman_r": 0.1595,
+      "spearman_p": 0.149825
+    },
+    {
+      "genre": "disney",
+      "n": 85,
+      "pearson_r": 0.0815,
+      "pearson_p": 0.458344,
+      "spearman_r": 0.1249,
+      "spearman_p": 0.254821
+    },
+    {
+      "genre": "blues",
+      "n": 84,
+      "pearson_r": 0.0764,
+      "pearson_p": 0.489671,
+      "spearman_r": 0.0889,
+      "spearman_p": 0.421044
+    },
+    {
+      "genre": "french",
+      "n": 87,
+      "pearson_r": 0.0763,
+      "pearson_p": 0.482513,
+      "spearman_r": 0.0093,
+      "spearman_p": 0.93209
+    },
+    {
+      "genre": "opera",
+      "n": 84,
+      "pearson_r": 0.0742,
+      "pearson_p": 0.50227,
+      "spearman_r": -0.0192,
+      "spearman_p": 0.862692
+    },
+    {
+      "genre": "rock",
+      "n": 84,
+      "pearson_r": 0.0736,
+      "pearson_p": 0.506092,
+      "spearman_r": 0.1264,
+      "spearman_p": 0.251818
+    },
+    {
+      "genre": "romance",
+      "n": 86,
+      "pearson_r": 0.0713,
+      "pearson_p": 0.514214,
+      "spearman_r": 0.1067,
+      "spearman_p": 0.327999
+    },
+    {
+      "genre": "indie-pop",
+      "n": 86,
+      "pearson_r": 0.0683,
+      "pearson_p": 0.531825,
+      "spearman_r": 0.0748,
+      "spearman_p": 0.493687
+    },
+    {
+      "genre": "grindcore",
+      "n": 85,
+      "pearson_r": 0.0626,
+      "pearson_p": 0.569328,
+      "spearman_r": -0.0605,
+      "spearman_p": 0.582183
+    },
+    {
+      "genre": "j-dance",
+      "n": 85,
+      "pearson_r": 0.0603,
+      "pearson_p": 0.583844,
+      "spearman_r": 0.0232,
+      "spearman_p": 0.83319
+    },
+    {
+      "genre": "show-tunes",
+      "n": 87,
+      "pearson_r": 0.0543,
+      "pearson_p": 0.617542,
+      "spearman_r": 0.0957,
+      "spearman_p": 0.37785
+    },
+    {
+      "genre": "funk",
+      "n": 85,
+      "pearson_r": 0.0531,
+      "pearson_p": 0.62923,
+      "spearman_r": 0.0726,
+      "spearman_p": 0.50904
+    },
+    {
+      "genre": "alternative",
+      "n": 82,
+      "pearson_r": 0.0516,
+      "pearson_p": 0.64541,
+      "spearman_r": 0.0048,
+      "spearman_p": 0.965887
+    },
+    {
+      "genre": "synth-pop",
+      "n": 82,
+      "pearson_r": 0.0484,
+      "pearson_p": 0.665699,
+      "spearman_r": 0.0702,
+      "spearman_p": 0.530903
+    },
+    {
+      "genre": "sertanejo",
+      "n": 81,
+      "pearson_r": 0.0452,
+      "pearson_p": 0.68841,
+      "spearman_r": 0.0231,
+      "spearman_p": 0.837708
+    },
+    {
+      "genre": "piano",
+      "n": 86,
+      "pearson_r": 0.0445,
+      "pearson_p": 0.684411,
+      "spearman_r": 0.1369,
+      "spearman_p": 0.208723
+    },
+    {
+      "genre": "j-idol",
+      "n": 82,
+      "pearson_r": 0.0367,
+      "pearson_p": 0.743156,
+      "spearman_r": -0.0256,
+      "spearman_p": 0.819714
+    },
+    {
+      "genre": "ambient",
+      "n": 84,
+      "pearson_r": 0.0341,
+      "pearson_p": 0.758063,
+      "spearman_r": -0.0162,
+      "spearman_p": 0.883797
+    },
+    {
+      "genre": "heavy-metal",
+      "n": 84,
+      "pearson_r": 0.0303,
+      "pearson_p": 0.784477,
+      "spearman_r": -0.0323,
+      "spearman_p": 0.770559
+    },
+    {
+      "genre": "malay",
+      "n": 83,
+      "pearson_r": 0.0278,
+      "pearson_p": 0.803136,
+      "spearman_r": 0.0675,
+      "spearman_p": 0.544373
+    },
+    {
+      "genre": "jazz",
+      "n": 85,
+      "pearson_r": 0.0255,
+      "pearson_p": 0.816955,
+      "spearman_r": -0.0043,
+      "spearman_p": 0.96854
+    },
+    {
+      "genre": "country",
+      "n": 83,
+      "pearson_r": 0.0251,
+      "pearson_p": 0.821896,
+      "spearman_r": 0.1132,
+      "spearman_p": 0.308187
+    },
+    {
+      "genre": "salsa",
+      "n": 85,
+      "pearson_r": 0.0199,
+      "pearson_p": 0.856366,
+      "spearman_r": -0.0673,
+      "spearman_p": 0.540593
+    },
+    {
+      "genre": "breakbeat",
+      "n": 87,
+      "pearson_r": 0.0184,
+      "pearson_p": 0.865699,
+      "spearman_r": -0.145,
+      "spearman_p": 0.180299
+    },
+    {
+      "genre": "pop-film",
+      "n": 83,
+      "pearson_r": 0.0178,
+      "pearson_p": 0.873244,
+      "spearman_r": -0.0095,
+      "spearman_p": 0.931955
+    },
+    {
+      "genre": "electronic",
+      "n": 84,
+      "pearson_r": 0.0125,
+      "pearson_p": 0.909914,
+      "spearman_r": 0.0049,
+      "spearman_p": 0.964575
+    },
+    {
+      "genre": "dance",
+      "n": 85,
+      "pearson_r": 0.0115,
+      "pearson_p": 0.916833,
+      "spearman_r": 0.0025,
+      "spearman_p": 0.981909
+    },
+    {
+      "genre": "punk-rock",
+      "n": 83,
+      "pearson_r": -0.0029,
+      "pearson_p": 0.979493,
+      "spearman_r": -0.0534,
+      "spearman_p": 0.631532
+    },
+    {
+      "genre": "metalcore",
+      "n": 85,
+      "pearson_r": -0.0053,
+      "pearson_p": 0.961399,
+      "spearman_r": -0.1819,
+      "spearman_p": 0.095647
+    },
+    {
+      "genre": "dubstep",
+      "n": 82,
+      "pearson_r": -0.0093,
+      "pearson_p": 0.934122,
+      "spearman_r": -0.026,
+      "spearman_p": 0.816692
+    },
+    {
+      "genre": "goth",
+      "n": 83,
+      "pearson_r": -0.0112,
+      "pearson_p": 0.919808,
+      "spearman_r": -0.1477,
+      "spearman_p": 0.182764
+    },
+    {
+      "genre": "spanish",
+      "n": 82,
+      "pearson_r": -0.016,
+      "pearson_p": 0.886814,
+      "spearman_r": -0.0058,
+      "spearman_p": 0.959027
+    },
+    {
+      "genre": "afrobeat",
+      "n": 80,
+      "pearson_r": -0.0187,
+      "pearson_p": 0.868994,
+      "spearman_r": 0.045,
+      "spearman_p": 0.691611
+    },
+    {
+      "genre": "chicago-house",
+      "n": 82,
+      "pearson_r": -0.0195,
+      "pearson_p": 0.862182,
+      "spearman_r": 0.0222,
+      "spearman_p": 0.842942
+    },
+    {
+      "genre": "sad",
+      "n": 83,
+      "pearson_r": -0.0199,
+      "pearson_p": 0.857938,
+      "spearman_r": 0.0103,
+      "spearman_p": 0.926451
+    },
+    {
+      "genre": "dancehall",
+      "n": 86,
+      "pearson_r": -0.0211,
+      "pearson_p": 0.847319,
+      "spearman_r": -0.0064,
+      "spearman_p": 0.953624
+    },
+    {
+      "genre": "club",
+      "n": 84,
+      "pearson_r": -0.025,
+      "pearson_p": 0.821443,
+      "spearman_r": -0.059,
+      "spearman_p": 0.593655
+    },
+    {
+      "genre": "folk",
+      "n": 86,
+      "pearson_r": -0.0328,
+      "pearson_p": 0.764098,
+      "spearman_r": -0.1456,
+      "spearman_p": 0.181034
+    },
+    {
+      "genre": "electro",
+      "n": 83,
+      "pearson_r": -0.0387,
+      "pearson_p": 0.728583,
+      "spearman_r": -0.0514,
+      "spearman_p": 0.644619
+    },
+    {
+      "genre": "reggaeton",
+      "n": 86,
+      "pearson_r": -0.042,
+      "pearson_p": 0.701234,
+      "spearman_r": -0.1113,
+      "spearman_p": 0.307513
+    },
+    {
+      "genre": "metal",
+      "n": 86,
+      "pearson_r": -0.0533,
+      "pearson_p": 0.625836,
+      "spearman_r": -0.0117,
+      "spearman_p": 0.914547
+    },
+    {
+      "genre": "drum-and-bass",
+      "n": 87,
+      "pearson_r": -0.0535,
+      "pearson_p": 0.622529,
+      "spearman_r": -0.0458,
+      "spearman_p": 0.673732
+    },
+    {
+      "genre": "anime",
+      "n": 83,
+      "pearson_r": -0.0567,
+      "pearson_p": 0.610854,
+      "spearman_r": 0.0111,
+      "spearman_p": 0.920798
+    },
+    {
+      "genre": "singer-songwriter",
+      "n": 87,
+      "pearson_r": -0.0575,
+      "pearson_p": 0.59652,
+      "spearman_r": -0.0025,
+      "spearman_p": 0.981704
+    },
+    {
+      "genre": "death-metal",
+      "n": 85,
+      "pearson_r": -0.0727,
+      "pearson_p": 0.508202,
+      "spearman_r": 0.0488,
+      "spearman_p": 0.657326
+    },
+    {
+      "genre": "honky-tonk",
+      "n": 85,
+      "pearson_r": -0.0747,
+      "pearson_p": 0.497023,
+      "spearman_r": -0.0124,
+      "spearman_p": 0.910089
+    },
+    {
+      "genre": "hard-rock",
+      "n": 88,
+      "pearson_r": -0.0768,
+      "pearson_p": 0.477074,
+      "spearman_r": -0.206,
+      "spearman_p": 0.054214
+    },
+    {
+      "genre": "kids",
+      "n": 85,
+      "pearson_r": -0.0787,
+      "pearson_p": 0.474301,
+      "spearman_r": 0.1198,
+      "spearman_p": 0.274695
+    },
+    {
+      "genre": "rockabilly",
+      "n": 83,
+      "pearson_r": -0.0886,
+      "pearson_p": 0.425991,
+      "spearman_r": -0.0909,
+      "spearman_p": 0.413904
+    },
+    {
+      "genre": "progressive-house",
+      "n": 85,
+      "pearson_r": -0.0891,
+      "pearson_p": 0.417468,
+      "spearman_r": -0.1163,
+      "spearman_p": 0.289034
+    },
+    {
+      "genre": "pop",
+      "n": 88,
+      "pearson_r": -0.0952,
+      "pearson_p": 0.377732,
+      "spearman_r": -0.0686,
+      "spearman_p": 0.525501
+    },
+    {
+      "genre": "guitar",
+      "n": 84,
+      "pearson_r": -0.0973,
+      "pearson_p": 0.378356,
+      "spearman_r": -0.1426,
+      "spearman_p": 0.19552
+    },
+    {
+      "genre": "deep-house",
+      "n": 87,
+      "pearson_r": -0.1048,
+      "pearson_p": 0.33418,
+      "spearman_r": -0.0121,
+      "spearman_p": 0.911168
+    },
+    {
+      "genre": "grunge",
+      "n": 85,
+      "pearson_r": -0.1062,
+      "pearson_p": 0.333195,
+      "spearman_r": -0.1015,
+      "spearman_p": 0.355418
+    },
+    {
+      "genre": "trip-hop",
+      "n": 84,
+      "pearson_r": -0.1063,
+      "pearson_p": 0.33588,
+      "spearman_r": -0.1068,
+      "spearman_p": 0.333727
+    },
+    {
+      "genre": "turkish",
+      "n": 84,
+      "pearson_r": -0.1107,
+      "pearson_p": 0.315986,
+      "spearman_r": 0.0618,
+      "spearman_p": 0.576727
+    },
+    {
+      "genre": "latino",
+      "n": 85,
+      "pearson_r": -0.1115,
+      "pearson_p": 0.309465,
+      "spearman_r": -0.18,
+      "spearman_p": 0.099177
+    },
+    {
+      "genre": "black-metal",
+      "n": 85,
+      "pearson_r": -0.126,
+      "pearson_p": 0.250403,
+      "spearman_r": -0.0315,
+      "spearman_p": 0.774778
+    },
+    {
+      "genre": "cantopop",
+      "n": 85,
+      "pearson_r": -0.1332,
+      "pearson_p": 0.224266,
+      "spearman_r": -0.1388,
+      "spearman_p": 0.205061
+    },
+    {
+      "genre": "alt-rock",
+      "n": 85,
+      "pearson_r": -0.1376,
+      "pearson_p": 0.209073,
+      "spearman_r": -0.2351,
+      "spearman_p": 0.030328
+    },
+    {
+      "genre": "sleep",
+      "n": 85,
+      "pearson_r": -0.1498,
+      "pearson_p": 0.171118,
+      "spearman_r": -0.2995,
+      "spearman_p": 0.005356
+    },
+    {
+      "genre": "gospel",
+      "n": 83,
+      "pearson_r": -0.1506,
+      "pearson_p": 0.174154,
+      "spearman_r": -0.164,
+      "spearman_p": 0.138482
+    },
+    {
+      "genre": "hardcore",
+      "n": 83,
+      "pearson_r": -0.1614,
+      "pearson_p": 0.145046,
+      "spearman_r": -0.197,
+      "spearman_p": 0.0742
+    },
+    {
+      "genre": "acoustic",
+      "n": 82,
+      "pearson_r": -0.1638,
+      "pearson_p": 0.141492,
+      "spearman_r": -0.1949,
+      "spearman_p": 0.079262
+    },
+    {
+      "genre": "brazil",
+      "n": 87,
+      "pearson_r": -0.1664,
+      "pearson_p": 0.123378,
+      "spearman_r": -0.2244,
+      "spearman_p": 0.036655
+    },
+    {
+      "genre": "edm",
+      "n": 84,
+      "pearson_r": -0.1666,
+      "pearson_p": 0.129936,
+      "spearman_r": -0.1387,
+      "spearman_p": 0.208139
+    },
+    {
+      "genre": "techno",
+      "n": 87,
+      "pearson_r": -0.1743,
+      "pearson_p": 0.106464,
+      "spearman_r": -0.1995,
+      "spearman_p": 0.063968
+    },
+    {
+      "genre": "comedy",
+      "n": 82,
+      "pearson_r": -0.1791,
+      "pearson_p": 0.10742,
+      "spearman_r": 0.0379,
+      "spearman_p": 0.735072
+    },
+    {
+      "genre": "songwriter",
+      "n": 87,
+      "pearson_r": -0.1822,
+      "pearson_p": 0.091134,
+      "spearman_r": -0.0929,
+      "spearman_p": 0.3919
+    },
+    {
+      "genre": "reggae",
+      "n": 82,
+      "pearson_r": -0.1866,
+      "pearson_p": 0.093233,
+      "spearman_r": -0.2302,
+      "spearman_p": 0.037472
+    },
+    {
+      "genre": "power-pop",
+      "n": 81,
+      "pearson_r": -0.1975,
+      "pearson_p": 0.077126,
+      "spearman_r": -0.1493,
+      "spearman_p": 0.183282
+    },
+    {
+      "genre": "forro",
+      "n": 86,
+      "pearson_r": -0.1994,
+      "pearson_p": 0.065673,
+      "spearman_r": -0.0731,
+      "spearman_p": 0.50377
+    },
+    {
+      "genre": "party",
+      "n": 85,
+      "pearson_r": -0.2012,
+      "pearson_p": 0.064895,
+      "spearman_r": -0.2149,
+      "spearman_p": 0.048274
+    },
+    {
+      "genre": "industrial",
+      "n": 83,
+      "pearson_r": -0.2033,
+      "pearson_p": 0.065281,
+      "spearman_r": -0.173,
+      "spearman_p": 0.117821
+    },
+    {
+      "genre": "rock-n-roll",
+      "n": 84,
+      "pearson_r": -0.2146,
+      "pearson_p": 0.049944,
+      "spearman_r": -0.0458,
+      "spearman_p": 0.678828
+    },
+    {
+      "genre": "psych-rock",
+      "n": 85,
+      "pearson_r": -0.2174,
+      "pearson_p": 0.045633,
+      "spearman_r": -0.2569,
+      "spearman_p": 0.017623
+    },
+    {
+      "genre": "chill",
+      "n": 85,
+      "pearson_r": -0.22,
+      "pearson_p": 0.043068,
+      "spearman_r": -0.1217,
+      "spearman_p": 0.267378
+    },
+    {
+      "genre": "disco",
+      "n": 86,
+      "pearson_r": -0.2303,
+      "pearson_p": 0.032882,
+      "spearman_r": -0.2181,
+      "spearman_p": 0.043693
+    },
+    {
+      "genre": "house",
+      "n": 87,
+      "pearson_r": -0.2366,
+      "pearson_p": 0.027326,
+      "spearman_r": -0.2704,
+      "spearman_p": 0.011294
+    },
+    {
+      "genre": "children",
+      "n": 87,
+      "pearson_r": -0.2641,
+      "pearson_p": 0.013461,
+      "spearman_r": -0.264,
+      "spearman_p": 0.013493
+    },
+    {
+      "genre": "minimal-techno",
+      "n": 85,
+      "pearson_r": -0.2658,
+      "pearson_p": 0.013946,
+      "spearman_r": -0.239,
+      "spearman_p": 0.027629
+    },
+    {
+      "genre": "bluegrass",
+      "n": 84,
+      "pearson_r": -0.2713,
+      "pearson_p": 0.012568,
+      "spearman_r": -0.1173,
+      "spearman_p": 0.288101
+    },
+    {
+      "genre": "indie",
+      "n": 85,
+      "pearson_r": -0.2812,
+      "pearson_p": 0.009131,
+      "spearman_r": -0.2765,
+      "spearman_p": 0.01042
+    },
+    {
+      "genre": "detroit-techno",
+      "n": 82,
+      "pearson_r": -0.2895,
+      "pearson_p": 0.00834,
+      "spearman_r": -0.2807,
+      "spearman_p": 0.010641
+    },
+    {
+      "genre": "study",
+      "n": 87,
+      "pearson_r": -0.2911,
+      "pearson_p": 0.006223,
+      "spearman_r": -0.3113,
+      "spearman_p": 0.003332
+    },
+    {
+      "genre": "garage",
+      "n": 87,
+      "pearson_r": -0.3021,
+      "pearson_p": 0.004453,
+      "spearman_r": -0.332,
+      "spearman_p": 0.001683
+    },
+    {
+      "genre": "iranian",
+      "n": 83,
+      "pearson_r": -0.304,
+      "pearson_p": 0.005211,
+      "spearman_r": -0.2452,
+      "spearman_p": 0.025486
+    },
+    {
+      "genre": "emo",
+      "n": 82,
+      "pearson_r": -0.4036,
+      "pearson_p": 0.00017,
+      "spearman_r": -0.4542,
+      "spearman_p": 1.8e-05
+    }
+  ],
+  "h1_significant_genres": [
+    {
+      "genre": "j-pop",
+      "n": 85,
+      "pearson_r": 0.392,
+      "pearson_p": 0.000207,
+      "spearman_r": 0.2903,
+      "spearman_p": 0.007047
+    },
+    {
+      "genre": "k-pop",
+      "n": 85,
+      "pearson_r": 0.3873,
+      "pearson_p": 0.00025,
+      "spearman_r": 0.5043,
+      "spearman_p": 1e-06
+    },
+    {
+      "genre": "swedish",
+      "n": 85,
+      "pearson_r": 0.3826,
+      "pearson_p": 0.000301,
+      "spearman_r": 0.323,
+      "spearman_p": 0.002567
+    },
+    {
+      "genre": "new-age",
+      "n": 83,
+      "pearson_r": 0.3471,
+      "pearson_p": 0.001305,
+      "spearman_r": 0.4008,
+      "spearman_p": 0.000174
+    },
+    {
+      "genre": "classical",
+      "n": 84,
+      "pearson_r": 0.2863,
+      "pearson_p": 0.008277,
+      "spearman_r": 0.2155,
+      "spearman_p": 0.048955
+    },
+    {
+      "genre": "j-rock",
+      "n": 88,
+      "pearson_r": 0.2765,
+      "pearson_p": 0.009118,
+      "spearman_r": 0.2212,
+      "spearman_p": 0.038317
+    },
+    {
+      "genre": "world-music",
+      "n": 86,
+      "pearson_r": 0.2451,
+      "pearson_p": 0.022925,
+      "spearman_r": 0.2199,
+      "spearman_p": 0.041869
+    },
+    {
+      "genre": "german",
+      "n": 85,
+      "pearson_r": 0.2413,
+      "pearson_p": 0.026074,
+      "spearman_r": 0.2369,
+      "spearman_p": 0.029008
+    },
+    {
+      "genre": "indian",
+      "n": 87,
+      "pearson_r": 0.2377,
+      "pearson_p": 0.026656,
+      "spearman_r": 0.2629,
+      "spearman_p": 0.013876
+    },
+    {
+      "genre": "ska",
+      "n": 89,
+      "pearson_r": 0.2117,
+      "pearson_p": 0.046467,
+      "spearman_r": 0.0319,
+      "spearman_p": 0.766532
+    },
+    {
+      "genre": "rock-n-roll",
+      "n": 84,
+      "pearson_r": -0.2146,
+      "pearson_p": 0.049944,
+      "spearman_r": -0.0458,
+      "spearman_p": 0.678828
+    },
+    {
+      "genre": "psych-rock",
+      "n": 85,
+      "pearson_r": -0.2174,
+      "pearson_p": 0.045633,
+      "spearman_r": -0.2569,
+      "spearman_p": 0.017623
+    },
+    {
+      "genre": "chill",
+      "n": 85,
+      "pearson_r": -0.22,
+      "pearson_p": 0.043068,
+      "spearman_r": -0.1217,
+      "spearman_p": 0.267378
+    },
+    {
+      "genre": "disco",
+      "n": 86,
+      "pearson_r": -0.2303,
+      "pearson_p": 0.032882,
+      "spearman_r": -0.2181,
+      "spearman_p": 0.043693
+    },
+    {
+      "genre": "house",
+      "n": 87,
+      "pearson_r": -0.2366,
+      "pearson_p": 0.027326,
+      "spearman_r": -0.2704,
+      "spearman_p": 0.011294
+    },
+    {
+      "genre": "children",
+      "n": 87,
+      "pearson_r": -0.2641,
+      "pearson_p": 0.013461,
+      "spearman_r": -0.264,
+      "spearman_p": 0.013493
+    },
+    {
+      "genre": "minimal-techno",
+      "n": 85,
+      "pearson_r": -0.2658,
+      "pearson_p": 0.013946,
+      "spearman_r": -0.239,
+      "spearman_p": 0.027629
+    },
+    {
+      "genre": "bluegrass",
+      "n": 84,
+      "pearson_r": -0.2713,
+      "pearson_p": 0.012568,
+      "spearman_r": -0.1173,
+      "spearman_p": 0.288101
+    },
+    {
+      "genre": "indie",
+      "n": 85,
+      "pearson_r": -0.2812,
+      "pearson_p": 0.009131,
+      "spearman_r": -0.2765,
+      "spearman_p": 0.01042
+    },
+    {
+      "genre": "detroit-techno",
+      "n": 82,
+      "pearson_r": -0.2895,
+      "pearson_p": 0.00834,
+      "spearman_r": -0.2807,
+      "spearman_p": 0.010641
+    },
+    {
+      "genre": "study",
+      "n": 87,
+      "pearson_r": -0.2911,
+      "pearson_p": 0.006223,
+      "spearman_r": -0.3113,
+      "spearman_p": 0.003332
+    },
+    {
+      "genre": "garage",
+      "n": 87,
+      "pearson_r": -0.3021,
+      "pearson_p": 0.004453,
+      "spearman_r": -0.332,
+      "spearman_p": 0.001683
+    },
+    {
+      "genre": "iranian",
+      "n": 83,
+      "pearson_r": -0.304,
+      "pearson_p": 0.005211,
+      "spearman_r": -0.2452,
+      "spearman_p": 0.025486
+    },
+    {
+      "genre": "emo",
+      "n": 82,
+      "pearson_r": -0.4036,
+      "pearson_p": 0.00017,
+      "spearman_r": -0.4542,
+      "spearman_p": 1.8e-05
+    }
+  ],
+  "h2_crosstab_raw": [
+    {
+      "market_region": "Asia Pacific",
+      "Emerging": 702,
+      "Established": 286,
+      "Rising": 450,
+      "Superstar": 80
+    },
+    {
+      "market_region": "Europe",
+      "Emerging": 1236,
+      "Established": 540,
+      "Rising": 760,
+      "Superstar": 118
+    },
+    {
+      "market_region": "Latin America",
+      "Emerging": 867,
+      "Established": 382,
+      "Rising": 569,
+      "Superstar": 74
+    },
+    {
+      "market_region": "Middle East & Africa",
+      "Emerging": 263,
+      "Established": 121,
+      "Rising": 175,
+      "Superstar": 29
+    },
+    {
+      "market_region": "North America",
+      "Emerging": 1273,
+      "Established": 584,
+      "Rising": 811,
+      "Superstar": 116
+    }
+  ],
+  "h2_crosstab_pct": [
+    {
+      "market_region": "Asia Pacific",
+      "Emerging": 46.25,
+      "Established": 18.84,
+      "Rising": 29.64,
+      "Superstar": 5.27
+    },
+    {
+      "market_region": "Europe",
+      "Emerging": 46.57,
+      "Established": 20.35,
+      "Rising": 28.64,
+      "Superstar": 4.45
+    },
+    {
+      "market_region": "Latin America",
+      "Emerging": 45.82,
+      "Established": 20.19,
+      "Rising": 30.07,
+      "Superstar": 3.91
+    },
+    {
+      "market_region": "Middle East & Africa",
+      "Emerging": 44.73,
+      "Established": 20.58,
+      "Rising": 29.76,
+      "Superstar": 4.93
+    },
+    {
+      "market_region": "North America",
+      "Emerging": 45.73,
+      "Established": 20.98,
+      "Rising": 29.13,
+      "Superstar": 4.17
+    }
+  ],
+  "h2_chi2": {
+    "chi2": 8.0,
+    "p_value": 0.785,
+    "dof": 12,
+    "cramers_v": 0.0168,
+    "n": 9436
+  },
+  "h2_superstar_pct": {
+    "Asia Pacific": {
+      "pct": 5.27,
+      "count": 80,
+      "total": 1518
+    },
+    "Europe": {
+      "pct": 4.45,
+      "count": 118,
+      "total": 2654
+    },
+    "Latin America": {
+      "pct": 3.91,
+      "count": 74,
+      "total": 1892
+    },
+    "Middle East & Africa": {
+      "pct": 4.93,
+      "count": 29,
+      "total": 588
+    },
+    "North America": {
+      "pct": 4.17,
+      "count": 116,
+      "total": 2784
+    }
+  },
+  "h3_trend": {
+    "spearman_r": -0.0042,
+    "spearman_p": 0.683,
+    "n": 9396
+  },
+  "h3_decade_stats": [
+    {
+      "decade": "1960s",
+      "mean_dance": 0.5876614785992218,
+      "median_dance": 0.608,
+      "std_dance": 0.1597672813011716,
+      "count": 257
+    },
+    {
+      "decade": "1970s",
+      "mean_dance": 0.562936923076923,
+      "median_dance": 0.57,
+      "std_dance": 0.16104081265892609,
+      "count": 260
+    },
+    {
+      "decade": "1980s",
+      "mean_dance": 0.5538970149253731,
+      "median_dance": 0.5445,
+      "std_dance": 0.18033582610874052,
+      "count": 268
+    },
+    {
+      "decade": "1990s",
+      "mean_dance": 0.5660574898785425,
+      "median_dance": 0.581,
+      "std_dance": 0.17363633593699232,
+      "count": 988
+    },
+    {
+      "decade": "2000s",
+      "mean_dance": 0.5649958677685951,
+      "median_dance": 0.576,
+      "std_dance": 0.16981296483550679,
+      "count": 2541
+    },
+    {
+      "decade": "2010s",
+      "mean_dance": 0.5658305527383367,
+      "median_dance": 0.58,
+      "std_dance": 0.17475838079539546,
+      "count": 3944
+    },
+    {
+      "decade": "2020s",
+      "mean_dance": 0.5625145869947277,
+      "median_dance": 0.576,
+      "std_dance": 0.1705849378929248,
+      "count": 1138
+    }
+  ],
+  "genre_popularity_top10": [
+    {
+      "track_genre": "pop-film",
+      "mean_pop": 60.13253012048193,
+      "median_pop": 60.0,
+      "count": 83
+    },
+    {
+      "track_genre": "k-pop",
+      "mean_pop": 58.529411764705884,
+      "median_pop": 59.0,
+      "count": 85
+    },
+    {
+      "track_genre": "sad",
+      "mean_pop": 52.7710843373494,
+      "median_pop": 54.0,
+      "count": 83
+    },
+    {
+      "track_genre": "chill",
+      "mean_pop": 51.96470588235294,
+      "median_pop": 56.0,
+      "count": 85
+    },
+    {
+      "track_genre": "indian",
+      "mean_pop": 50.88505747126437,
+      "median_pop": 49.0,
+      "count": 87
+    },
+    {
+      "track_genre": "grunge",
+      "mean_pop": 49.65882352941176,
+      "median_pop": 57.0,
+      "count": 85
+    },
+    {
+      "track_genre": "anime",
+      "mean_pop": 48.8433734939759,
+      "median_pop": 49.0,
+      "count": 83
+    },
+    {
+      "track_genre": "emo",
+      "mean_pop": 48.41463414634146,
+      "median_pop": 49.0,
+      "count": 82
+    },
+    {
+      "track_genre": "sertanejo",
+      "mean_pop": 48.01234567901235,
+      "median_pop": 47.0,
+      "count": 81
+    },
+    {
+      "track_genre": "piano",
+      "mean_pop": 47.45348837209303,
+      "median_pop": 52.0,
+      "count": 86
+    }
+  ],
+  "tier_popularity": [
+    {
+      "artist_tier": "Superstar",
+      "mean_pop": 76.12235294117647,
+      "median_pop": 75.0,
+      "count": 425
+    },
+    {
+      "artist_tier": "Established",
+      "mean_pop": 58.18018480492813,
+      "median_pop": 58.0,
+      "count": 1948
+    },
+    {
+      "artist_tier": "Rising",
+      "mean_pop": 40.132222616093586,
+      "median_pop": 40.0,
+      "count": 2821
+    },
+    {
+      "artist_tier": "Emerging",
+      "mean_pop": 11.918973666441593,
+      "median_pop": 12.0,
+      "count": 4443
+    }
+  ],
+  "popularity_describe": {
+    "count": 9637.0,
+    "mean": 32.36,
+    "std": 22.34,
+    "min": 0.0,
+    "25%": 16.0,
+    "50%": 33.0,
+    "75%": 49.0,
+    "max": 98.0
+  }
+}
