@@ -206,6 +206,19 @@ def execute_user_code(code_str, exec_env=None):
         duration_ms = round((time.time() - start_t) * 1000, 1)
         return None, duration_ms, f"Execution Error: {e}\n{traceback.format_exc()}"
 
+@app.after_request
+def add_cors_headers(response):
+    response.headers["Access-Control-Allow-Origin"] = "*"
+    response.headers["Access-Control-Allow-Headers"] = "Content-Type,Authorization"
+    response.headers["Access-Control-Allow-Methods"] = "GET,POST,OPTIONS"
+    return response
+
+@app.errorhandler(Exception)
+def handle_all_exceptions(e):
+    trace = traceback.format_exc()
+    print(f"[UNHANDLED EXCEPTION] {e}\n{trace}")
+    return jsonify({"error": str(e), "traceback": trace}), 500
+
 @app.route("/")
 def index():
     return send_from_directory(".", "index.html")
@@ -214,29 +227,36 @@ def index():
 def static_files(filename):
     return send_from_directory(".", filename)
 
-@app.route("/api/chat", methods=["POST"])
+@app.route("/api/chat", methods=["POST", "OPTIONS"])
 def chat():
-    body = request.get_json(force=True)
-    messages = body.get("messages", [])
-    model_key = body.get("model", "qwen")
-
-    # Target model config
-    endpoint = "https://openrouter.ai/api/v1/chat/completions"
-    model_id = "qwen/qwen3.6-plus"
-    api_key = OPENROUTER_KEY
-
-    headers = {
-        "Authorization": f"Bearer {api_key}",
-        "Content-Type": "application/json",
-        "HTTP-Referer": "http://localhost:5050",
-        "X-Title": "Music Streaming Data Explorer"
-    }
-
-    full_messages = [{"role": "system", "content": SYSTEM_PROMPT}] + messages
-    executed_code_history = []
-    total_exec_time = 0
+    if request.method == "OPTIONS":
+        return jsonify({"status": "ok"}), 200
 
     try:
+        body = request.get_json(force=True) or {}
+        messages = body.get("messages", [])
+        model_key = body.get("model", "qwen")
+
+        # Target model config
+        endpoint = "https://openrouter.ai/api/v1/chat/completions"
+        model_id = "qwen/qwen3.6-plus"
+        api_key = (OPENROUTER_KEY or os.environ.get("OPENROUTER_API_KEY", "")).strip().replace("\n", "").replace("\r", "").replace(" ", "")
+
+        if not api_key:
+            return jsonify({
+                "error": "OPENROUTER_API_KEY is missing on the server. Please add it to your Render Environment Variables."
+            }), 400
+
+        headers = {
+            "Authorization": f"Bearer {api_key}",
+            "Content-Type": "application/json",
+            "HTTP-Referer": "https://music-streaming-explorer.onrender.com",
+            "X-Title": "Music Streaming Data Explorer"
+        }
+
+        full_messages = [{"role": "system", "content": SYSTEM_PROMPT}] + messages
+        executed_code_history = []
+        total_exec_time = 0
         max_iterations = 6
         current_iteration = 0
         final_reply = ""

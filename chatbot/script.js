@@ -76,7 +76,7 @@ async function sendMessage() {
     typingEl.remove();
 
     if (!response.ok) {
-      const err = await response.json().catch(() => ({ error: 'Unknown error' }));
+      const err = await response.json().catch(() => ({ error: `Server response error (HTTP ${response.status})` }));
       throw new Error(err.error || `HTTP ${response.status}`);
     }
 
