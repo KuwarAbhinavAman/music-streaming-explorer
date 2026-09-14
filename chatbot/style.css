@@ -110,6 +110,31 @@ body {
   font-weight: 400;
 }
 
+.author-badge {
+  color: #60a5fa;
+  font-weight: 500;
+}
+
+.author-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(59, 130, 246, 0.12);
+  border: 1px solid rgba(59, 130, 246, 0.28);
+  color: #93c5fd;
+  padding: 6px 16px;
+  border-radius: 20px;
+  font-size: 12.5px;
+  margin-bottom: 24px;
+  letter-spacing: 0.2px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.author-pill strong {
+  color: #ffffff;
+  font-weight: 600;
+}
+
 .header-right {
   display: flex;
   align-items: center;
